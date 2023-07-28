@@ -1,6 +1,11 @@
 ;;; init.el --- Load the full configuration
 ;;; Code:
-(electric-pair-mode t) ; auto complete bracket
-(tool-bar-mode -1)     ; disable tool bar
-(global-display-line-numbers-mode 1) ; show line number
+(let ((minver "25.1"))
+  (when (version< emacs-version minver)
+    (error "Your Emacs is too old -- this config require v%s or higher" minver)))
+
+(add-to-list `load-path "~/.emacs.d/lisp")
+(require `init-basic)
+
+(provide `init)
 ;;; init.el ends here

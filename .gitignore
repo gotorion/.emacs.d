@@ -2,3 +2,6 @@
 /elpa
 /eshell
 /transient
+/auto-save-list
+/emacs.exe.stackdump
+/.cache

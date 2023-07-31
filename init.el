@@ -2,18 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 (setq url-proxy-services `(("http" . "127.0.0.1:7890")))
-(require `package)
-(setq package-archives `(("gnu" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-			 ("melpa" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
-(package-initialize)
-
-(unless (package-installed-p `use-package)
-  ;; update local cache
-  (package-refresh-contents)
-  (package-install `use-package))
-(eval-when-compile
-  (require `use-package))
-(setq user-package-always-ensure t)
+(add-to-list `load-path "~/.emacs.d/lisp")
+(require `basic)
+(require 'packages)
 
 ;; install theme
 (use-package doom-themes
@@ -70,7 +61,8 @@
 
 ;; magit
 (use-package magit)
-
+;; helm
+(package-install 'helm)
 (use-package helm
   :bind (("M-x" . helm-M-x)
 	 ("C-x C-f" . helm-find-files))
@@ -90,11 +82,6 @@
   (setq flycheck-emacs-lisp-load-path `inherit)
   :config
   (global-flycheck-mode))
-
-
-
-(add-to-list `load-path "~/.emacs.d/lisp")
-(require `basic)
 
 (provide `init)
 

@@ -6,6 +6,7 @@
 
 (require 'basic)
 (require 'packages)
+(require 'keybindings)
 (require 'ui)
 
 ;; lsp-mode

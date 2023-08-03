@@ -12,12 +12,13 @@
  '(exwm-floating-border-color "#c4c4c4")
  '(fci-rule-color "#9e9e9e")
  '(highlight-tail-colors ((("#e8eee8") . 0) (("#e6eff2") . 20)))
+ '(ispell-dictionary nil)
  '(jdee-db-active-breakpoint-face-colors (cons "#fafafa" "#3b6ea8"))
  '(jdee-db-requested-breakpoint-face-colors (cons "#fafafa" "#4f894c"))
  '(jdee-db-spec-breakpoint-face-colors (cons "#fafafa" "#bdbdbd"))
  '(objed-cursor-color "#99324b")
  '(package-selected-packages
-   '(lsp-ui lsp-mode gruvbox-theme doom-modeline-now-playing magit doom-themes doom-modeline vterm flycheck company helm vertico-prescient vertico keycast dracula-theme use-package))
+   '(smartparens smartparens-config smartparents-config nerd-icons-dired lsp-ui lsp-mode gruvbox-theme doom-modeline-now-playing magit doom-themes doom-modeline vterm flycheck company helm vertico-prescient vertico keycast dracula-theme use-package))
  '(pdf-view-midnight-colors (cons "#2a2a2a" "#fafafa"))
  '(rustic-ansi-faces
    ["#fafafa" "#99324b" "#4f894c" "#9a7500" "#3b6ea8" "#97365b" "#398eac" "#2a2a2a"])

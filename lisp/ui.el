@@ -2,6 +2,8 @@
 ;;; Commentary
 ;;; Code:
 
+;; install nerd-icons
+(use-package nerd-icons)
 ;; install theme
 (use-package doom-themes
   :ensure t
@@ -24,7 +26,13 @@
 ;; modeline
 (use-package doom-modeline
   :ensure t
-  :init (doom-modeline-mode 1))
+  :init (doom-modeline-mode 1)
+  :config
+  (setq doom-modeline-height 25)
+  (setq doom-modeline-icon t)
+  (setq doom-modeline-major-mode-color-icon t)
+  (setq doom-modeline-buffer-state-icon t)
+  )
 
 (provide 'ui)
 ;;; ui.el ends here

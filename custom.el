@@ -5,9 +5,9 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
    ["#fafafa" "#99324b" "#4f894c" "#9a7500" "#3b6ea8" "#97365b" "#398eac" "#2a2a2a"])
- '(custom-enabled-themes '(doom-xcode))
+ '(custom-enabled-themes '(doom-one-light))
  '(custom-safe-themes
-   '("02f57ef0a20b7f61adce51445b68b2a7e832648ce2e7efb19d217b6454c1b644" "adaf421037f4ae6725aa9f5654a2ed49e2cd2765f71e19a7d26a454491b486eb" "70b596389eac21ab7f6f7eb1cf60f8e60ad7c34ead1f0244a577b1810e87e58c" "2721b06afaf1769ef63f942bf3e977f208f517b187f2526f0e57c1bd4a000350" "2e05569868dc11a52b08926b4c1a27da77580daa9321773d92822f7a639956ce" "467dc6fdebcf92f4d3e2a2016145ba15841987c71fbe675dcfe34ac47ffb9195" default))
+   '("afa47084cb0beb684281f480aa84dab7c9170b084423c7f87ba755b15f6776ef" "a44e2d1636a0114c5e407a748841f6723ed442dc3a0ed086542dc71b92a87aee" "02f57ef0a20b7f61adce51445b68b2a7e832648ce2e7efb19d217b6454c1b644" "adaf421037f4ae6725aa9f5654a2ed49e2cd2765f71e19a7d26a454491b486eb" "70b596389eac21ab7f6f7eb1cf60f8e60ad7c34ead1f0244a577b1810e87e58c" "2721b06afaf1769ef63f942bf3e977f208f517b187f2526f0e57c1bd4a000350" "2e05569868dc11a52b08926b4c1a27da77580daa9321773d92822f7a639956ce" "467dc6fdebcf92f4d3e2a2016145ba15841987c71fbe675dcfe34ac47ffb9195" default))
  '(delete-selection-mode nil)
  '(exwm-floating-border-color "#c4c4c4")
  '(fci-rule-color "#9e9e9e")

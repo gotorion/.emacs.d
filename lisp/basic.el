@@ -5,7 +5,8 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)     ; disable tool bar
 (global-display-line-numbers-mode 1) ; show line number
-
+(blink-cursor-mode nil) ;; on X Window
+(setq visible-cursor nil) ;; on Console
 ;; set yes-or-no to y/n
 (fset 'yes-or-no-p 'y-or-n-p)
 

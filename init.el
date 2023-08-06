@@ -59,7 +59,7 @@
 	company-tooltip-limit 20
 	company-show-numbers t
 	company-idle-delay .2
-	company-minimum-prefix-length 1))
+	company-minimum-prefix-length 2))
 (use-package flycheck
   :init
   (setq flycheck-emacs-lisp-load-path `inherit)

@@ -3,48 +3,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector
-   ["#fafafa" "#99324b" "#4f894c" "#9a7500" "#3b6ea8" "#97365b" "#398eac" "#2a2a2a"])
- '(custom-enabled-themes '(doom-one-light))
  '(custom-safe-themes
-   '("afa47084cb0beb684281f480aa84dab7c9170b084423c7f87ba755b15f6776ef" "a44e2d1636a0114c5e407a748841f6723ed442dc3a0ed086542dc71b92a87aee" "02f57ef0a20b7f61adce51445b68b2a7e832648ce2e7efb19d217b6454c1b644" "adaf421037f4ae6725aa9f5654a2ed49e2cd2765f71e19a7d26a454491b486eb" "70b596389eac21ab7f6f7eb1cf60f8e60ad7c34ead1f0244a577b1810e87e58c" "2721b06afaf1769ef63f942bf3e977f208f517b187f2526f0e57c1bd4a000350" "2e05569868dc11a52b08926b4c1a27da77580daa9321773d92822f7a639956ce" "467dc6fdebcf92f4d3e2a2016145ba15841987c71fbe675dcfe34ac47ffb9195" default))
- '(delete-selection-mode nil)
- '(exwm-floating-border-color "#c4c4c4")
- '(fci-rule-color "#9e9e9e")
- '(highlight-tail-colors ((("#e8eee8") . 0) (("#e6eff2") . 20)))
+   '("bbb13492a15c3258f29c21d251da1e62f1abb8bbd492386a673dcfab474186af" "eab123a5ed21463c780e17fc44f9ffc3e501655b966729a2d5a2072832abd3ac" default))
  '(ispell-dictionary nil)
- '(jdee-db-active-breakpoint-face-colors (cons "#fafafa" "#3b6ea8"))
- '(jdee-db-requested-breakpoint-face-colors (cons "#fafafa" "#4f894c"))
- '(jdee-db-spec-breakpoint-face-colors (cons "#fafafa" "#bdbdbd"))
- '(objed-cursor-color "#99324b")
  '(package-selected-packages
-   '(smartparens smartparens-config smartparents-config nerd-icons-dired lsp-ui lsp-mode gruvbox-theme doom-modeline-now-playing magit doom-themes doom-modeline vterm flycheck company helm vertico-prescient vertico keycast dracula-theme use-package))
- '(pdf-view-midnight-colors (cons "#2a2a2a" "#fafafa"))
- '(rustic-ansi-faces
-   ["#fafafa" "#99324b" "#4f894c" "#9a7500" "#3b6ea8" "#97365b" "#398eac" "#2a2a2a"])
- '(vc-annotate-background "#fafafa")
- '(vc-annotate-color-map
-   (list
-    (cons 20 "#4f894c")
-    (cons 40 "#688232")
-    (cons 60 "#817b19")
-    (cons 80 "#9a7500")
-    (cons 100 "#a0640c")
-    (cons 120 "#a65419")
-    (cons 140 "#ac4426")
-    (cons 160 "#a53f37")
-    (cons 180 "#9e3a49")
-    (cons 200 "#97365b")
-    (cons 220 "#973455")
-    (cons 240 "#983350")
-    (cons 260 "#99324b")
-    (cons 280 "#a25467")
-    (cons 300 "#ab7784")
-    (cons 320 "#b49aa0")
-    (cons 340 "#9e9e9e")
-    (cons 360 "#9e9e9e")))
- '(vc-annotate-very-old-color nil)
- '(warning-suppress-types '((comp) (comp) (comp) (comp) (comp))))
+   '(all-the-icons which-key spacemacs-theme cmake-mode vterm use-package smartparens rainbow-delimiters nerd-icons-dired magit lsp-ui helm flycheck doom-themes doom-modeline dashboard company)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -7,11 +7,16 @@
   :defer t
   :init (load-theme 'spacemacs-light t))
 
+;; icons
+(use-package nerd-icons)
+
 ;; modeline
-(use-package all-the-icons)
+
 (use-package doom-modeline
   :ensure t
   :init (doom-modeline-mode 1)
+  :custom
+  (doom-modeline-enable-word-count nil)
 )
 ;; rainbow-delimiters
 (use-package rainbow-delimiters

@@ -16,7 +16,7 @@
   (setq lsp-keymap-prefix "C-c l"
 	lsp-auto-configure t
 	lsp-auto-guess-root t
-	lsp-idle-delay 0.500
+	lsp-idle-delay 0.200
   )
   :hook (
 	 ((c++-mode

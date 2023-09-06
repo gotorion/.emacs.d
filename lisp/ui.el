@@ -9,7 +9,8 @@
 
 ;; icons
 (use-package nerd-icons)
-
+;; font
+(set-frame-font "Hack Nerd Font Mono 13")
 ;; modeline
 
 (use-package doom-modeline

@@ -5,7 +5,7 @@
 ;; theme
 (use-package spacemacs-theme
   :defer t
-  :init (load-theme 'spacemacs-light t))
+  :init (load-theme 'leuven t))
 
 ;; icons
 (use-package nerd-icons)

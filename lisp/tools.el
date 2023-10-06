@@ -8,6 +8,13 @@
     )
   )
 
+;; clang-format
+(require 'clang-format)
+(global-set-key (kbd "C-c i") 'clang-format-region)
+(global-set-key (kbd "C-c u") 'clang-format-buffer)
+
+(setq clang-format-style-option 'google)
+
 ;; which-key
 (use-package which-key
   :diminish which-key-mode
@@ -15,7 +22,12 @@
   (which-key-mode))
 ;; smartparens
 (use-package smartparens)
-
+;; mwim
+(use-package mwim
+  :ensure t
+  :bind
+  ("C-a" . mwim-beginning-of-code-or-line)
+  ("C-e" . mwim-end-of-code-or-line))
 ;; treemacs
 (use-package treemacs
   :ensure t

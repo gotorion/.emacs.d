@@ -15,6 +15,7 @@
 
 (setq clang-format-style-option 'google)
 
+
 ;; which-key
 (use-package which-key
   :diminish which-key-mode

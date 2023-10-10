@@ -5,8 +5,17 @@
 (menu-bar-mode -1)
 ;;(tool-bar-mode -1)     ; disable tool bar(emacs-nox not work)
 (global-display-line-numbers-mode 1) ; show line number
+(global-hl-line-mode t)
+
+;; tab line mode
+(global-tab-line-mode t)
+(setq tab-line-new-button-show nil)
+(setq tab-line-close-button-show nil)
+(setq tab-line-separator (propertize "|" 'face  '(inherit 'tab-line-tab-inactive  :foreground  "SeaGreen3")))
+
 (blink-cursor-mode nil) ;; on X Window
 (setq visible-cursor nil) ;; on Console
+
 ;; set yes-or-no to y/n
 (fset 'yes-or-no-p 'y-or-n-p)
 

@@ -1,18 +1,16 @@
 ;;; basic -- Some basic settings
 ;;; Code:
+
 (electric-pair-mode t) ; auto complete bracket
 (add-hook 'prog-mode-hook #'show-paren-mode)
 (menu-bar-mode -1)
-;;(tool-bar-mode -1)     ; disable tool bar(emacs-nox not work)
+;; disable tool bar(emacs-nox not work)
+(tool-bar-mode -1)
+
 (global-display-line-numbers-mode 1) ; show line number
+
+;; cursor
 (global-hl-line-mode t)
-
-;; tab line mode
-(global-tab-line-mode t)
-(setq tab-line-new-button-show nil)
-(setq tab-line-close-button-show nil)
-(setq tab-line-separator (propertize "|" 'face  '(inherit 'tab-line-tab-inactive  :foreground  "SeaGreen3")))
-
 (blink-cursor-mode nil) ;; on X Window
 (setq visible-cursor nil) ;; on Console
 

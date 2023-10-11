@@ -1,3 +1,7 @@
+;;; tools --- for better user experience
+;;; Commentary:
+;;; Code:
+
 ;; switch window fast
 (use-package ace-window
   :ensure t
@@ -8,13 +12,12 @@
     )
   )
 
-;; clang-format
-(require 'clang-format)
-(global-set-key (kbd "C-c i") 'clang-format-region)
-(global-set-key (kbd "C-c u") 'clang-format-buffer)
-
-(setq clang-format-style-option 'google)
-
+;; undo-tree
+(use-package undo-tree
+  :ensure t
+  :init (global-undo-tree-mode)
+  :custom
+  (undo-tree-auto-save-history nil))
 
 ;; which-key
 (use-package which-key
@@ -29,6 +32,14 @@
   :bind
   ("C-a" . mwim-beginning-of-code-or-line)
   ("C-e" . mwim-end-of-code-or-line))
+
+;; highlight-symbol
+(use-package highlight-symbol
+  :ensure t
+  :init (highlight-symbol-mode)
+  :bind ("<f4>" . highlight-symbol)
+  )
+
 ;; treemacs
 (use-package treemacs
   :ensure t
@@ -144,4 +155,5 @@
   :after (treemacs)
   :ensure t
   :config (treemacs-set-scope-type 'Tabs))
+
 (provide 'tools)

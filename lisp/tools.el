@@ -17,7 +17,11 @@
   :ensure t
   :init (global-undo-tree-mode)
   :custom
-  (undo-tree-auto-save-history nil))
+  (progn
+    (setq undo-tree-auto-save-history nil)
+    (global-set-key (kbd "C-/") 'undo-tree-undo))
+  )
+
 
 ;; which-key
 (use-package which-key

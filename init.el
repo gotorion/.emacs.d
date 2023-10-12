@@ -62,6 +62,15 @@
   :config
   (helm-mode t))
 
+;; test ivy
+;; (use-package ivy
+;;   :init
+;;   (setq ivy-use-virtual-buffers t)
+;;   :bind (("M-x" . 'counsel-M-x))
+;;   :config
+;;   (ivy-mode t))
+
+
 (use-package company
   :hook (after-init . global-company-mode)
   :config

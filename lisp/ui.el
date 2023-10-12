@@ -2,16 +2,23 @@
 ;;; ui.el configure ui;;;
 ;;;Code:
 
-;; theme
-(use-package spacemacs-theme
+(use-package ef-themes
   :defer t
-  :init (load-theme 'tsdh-dark t))
-
+  :init (load-theme 'ef-duo-light t))
 ;; icons
 (use-package all-the-icons
-  :if (display-graphic-p))
-
+  :if (display-graphic-p)
+  )
 (use-package nerd-icons)
+
+;; tab bar
+(use-package centaur-tabs
+  :demand
+  :config
+  (centaur-tabs-mode t)
+  :bind
+  ("C-<left>" . centaur-tabs-backward)
+  ("C-<right>" . centaur-tabs-forward))
 
 ;; font
 (set-frame-font "Hack Nerd Font Mono 13")
@@ -21,7 +28,7 @@
   :ensure t
   :init (doom-modeline-mode t)
   :custom
-  (doom-modeline-enable-word-count nil)
+  (doom-modeline-enable-word-count t)
   )
 
 ;; rainbow-delimiters

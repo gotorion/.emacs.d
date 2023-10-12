@@ -4,6 +4,9 @@
 (electric-pair-mode t) ; auto complete bracket
 (add-hook 'prog-mode-hook #'show-paren-mode)
 (menu-bar-mode -1)
+;; delete selection moce
+(delete-selection-mode t)
+
 ;; disable tool bar(emacs-nox not work)
 (tool-bar-mode -1)
 

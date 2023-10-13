@@ -15,21 +15,20 @@
 ;; undo-tree
 (use-package undo-tree
   :ensure t
-  :init (global-undo-tree-mode)
-  :custom
-  (progn
-    (setq undo-tree-auto-save-history nil)
-    (global-set-key (kbd "C-/") 'undo-tree-undo))
+  :init (setq undo-tree-auto-save-history nil)
+  :config
+  (global-undo-tree-mode t)
   )
-
 
 ;; which-key
 (use-package which-key
   :diminish which-key-mode
   :config
   (which-key-mode))
+
 ;; smartparens
 (use-package smartparens)
+
 ;; mwim
 (use-package mwim
   :ensure t

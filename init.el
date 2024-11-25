@@ -1,18 +1,32 @@
 ;;; init.el --- Load the full configuration
 ;;; Commentary:
 ;;; Code:
-;; (setq url-proxy-services `(("http" . "127.0.0.1:7890")))
 (add-to-list `load-path "~/.emacs.d/lisp")
 
+(require 'package)
+(setq package-archives '(("gnu"    . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+                          ("nongnu" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
+                          ("melpa"  . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+(package-initialize)
+
+(when (not package-archive-contents)
+  (package-refresh-contents))
+
+(setq package-check-signature nil)
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(require 'use-package-ensure)
+(setq use-package-always-ensure t)
+
+(eval-when-compile
+  (require 'use-package))
+
 (setq gc-cons-threshold most-negative-fixnum)
-;; (let ((normal-gc-cons-threshold (* 20 1024 1024))
-;;       (init-gc-cons-threshold (* 128 1024 1024)))
-;;   (setq gc-cons-threshold init-gc-cons-threshold)
-;;   (add-hook 'emacs-startup-hook
-;; 	    (lambda () (setq gc-cons-threshold normal-gc-cons-threshold))))
 
 (require 'basic)
-(require 'packages)
 (require 'keybindings)
 (require 'tools)
 (require 'ui)
@@ -61,15 +75,6 @@
 	 ("C-x C-f" . helm-find-files))
   :config
   (helm-mode t))
-
-;; test ivy
-;; (use-package ivy
-;;   :init
-;;   (setq ivy-use-virtual-buffers t)
-;;   :bind (("M-x" . 'counsel-M-x))
-;;   :config
-;;   (ivy-mode t))
-
 
 (use-package company
   :hook (after-init . global-company-mode)

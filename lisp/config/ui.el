@@ -4,7 +4,7 @@
 
 (use-package ef-themes
   :defer t
-  :init (load-theme 'ef-duo-light t))
+  :init (load-theme 'ef-duo-dark t))
 ;; icons
 (use-package all-the-icons
   :if (display-graphic-p)

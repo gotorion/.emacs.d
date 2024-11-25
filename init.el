@@ -1,97 +1,36 @@
-;;; init.el --- Load the full configuration
-;;; Commentary:
-;;; Code:
-(add-to-list `load-path "~/.emacs.d/lisp")
+(defun add-subdirs-to-load-path (search-dir)
+  (interactive)
+  (let* ((dir (file-name-as-directory search-dir)))
+    (dolist (subdir
+             ;; 过滤出不必要的目录，提升Emacs启动速度
+             (cl-remove-if
+              #'(lambda (subdir)
+                  (or
+                   ;; 不是目录的文件都移除
+                   (not (file-directory-p (concat dir subdir)))
+                   ;; 父目录、 语言相关和版本控制目录都移除
+                   (member subdir '("." ".." 
+                                    "dist" "node_modules" "__pycache__" 
+                                    "RCS" "CVS" "rcs" "cvs" ".git" ".github")))) 
+              (directory-files dir)))
+      (let ((subdir-path (concat dir (file-name-as-directory subdir))))
+        ;; 目录下有 .el .so .dll 文件的路径才添加到 `load-path' 中，提升Emacs启动速度
+        (when (cl-some #'(lambda (subdir-file)
+                           (and (file-regular-p (concat subdir-path subdir-file))
+                                ;; .so .dll 文件指非Elisp语言编写的Emacs动态库
+                                (member (file-name-extension subdir-file) '("el" "so" "dll"))))
+                       (directory-files subdir-path))
 
-(require 'package)
-(setq package-archives '(("gnu"    . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-                          ("nongnu" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
-                          ("melpa"  . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
-(package-initialize)
+          ;; 注意：`add-to-list' 函数的第三个参数必须为 t ，表示加到列表末尾
+          ;; 这样Emacs会从父目录到子目录的顺序搜索Elisp插件，顺序反过来会导致Emacs无法正常启动
+          (add-to-list 'load-path subdir-path t))
 
-(when (not package-archive-contents)
-  (package-refresh-contents))
+        ;; 继续递归搜索子目录
+        (add-subdirs-to-load-path subdir-path)))))
 
-(setq package-check-signature nil)
+(add-subdirs-to-load-path "~/.emacs.d/lisp")
 
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
-(require 'use-package-ensure)
-(setq use-package-always-ensure t)
-
-(eval-when-compile
-  (require 'use-package))
-
-(setq gc-cons-threshold most-negative-fixnum)
-
-(require 'basic)
-(require 'keybindings)
-(require 'tools)
-(require 'ui)
-(require 'clang)
-
-;; lsp-mode
-(use-package lsp-mode
-  :init
-  (setq lsp-keymap-prefix "C-c l"
-	lsp-auto-configure t
-	lsp-auto-guess-root t
-	lsp-idle-delay 0.200
-	lsp-headerline-breadcrumb-enable nil
-  )
-  :hook (
-	 ((c++-mode
-	   c-mode
-	   python-mode
-	   ) . lsp)
-	 (lsp-mode . lsp-enable-which-key-integration)
-	 )
-  :commands lsp)
-
-(use-package lsp-ui
-  :after (lsp-mode)
-  :commands (lsp-ui-mode)
-  :bind
-  (:map lsp-ui-mode-map
-	([remap xref-find-references] . lsp-ui-peek-find-references)
-	([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
-	("C-c u" . lsp-ui-imenu))
-  :hook (lsp-mode . lsp-ui-mode)
-  :init
-  (setq lsp-enable-symbol-highlighting t
-	lsp-ui-doc-enable t
-	lsp-lens-enable t)
-  )
-
-;; magit
-(use-package magit)
-
-;; helm
-(package-install 'helm)
-(use-package helm
-  :bind (("M-x" . helm-M-x)
-	 ("C-x C-f" . helm-find-files))
-  :config
-  (helm-mode t))
-
-(use-package company
-  :hook (after-init . global-company-mode)
-  :config
-  (setq company-tooltip-align-annotations t
-	company-tooltip-limit 20
-	company-show-numbers t
-	company-idle-delay .2
-	company-minimum-prefix-length 1))
-(use-package flycheck
-  :init
-  (setq flycheck-emacs-lisp-load-path `inherit)
-  :config
-  (global-flycheck-mode))
-
-(provide `init)
-
-(setq custom-file "~/.emacs.d/custom.el")
+(setq custom-file "~/.emacs.d/lisp/custom/custom.el")
 (load custom-file)
-;;; init.el ends here
+
+(require `init-config)

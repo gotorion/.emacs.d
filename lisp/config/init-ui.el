@@ -4,7 +4,7 @@
 
 (use-package ef-themes
   :defer t
-  :init (load-theme 'ef-duo-dark t))
+  :init (load-theme 'ef-bio))
 ;; icons
 (use-package all-the-icons
   :if (display-graphic-p)
@@ -52,5 +52,5 @@
   :ensure t
   :hook (prog-mode . rainbow-delimiters-mode))
 
-(provide 'ui)
+(provide 'init-ui)
 ;;; ui.el ends here

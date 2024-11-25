@@ -28,7 +28,7 @@
 (require 'basic)
 (require 'keybindings)
 (require 'tools)
-(require 'ui)
+(require 'init-ui)
 (require 'helm-conf)
 (require 'clang)
 
